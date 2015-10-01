@@ -1,0 +1,35 @@
+﻿<Window x:Class="Q3_WPF_Demo.MainWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                Title="MainWindow" Height="350" Width="525">
+        <StackPanel>
+            <TextBlock Margin="10" Text="Default TimeSpanPicker"/>
+            <telerik:RadTimeSpanPicker GenerateDefaultComponents="True" />
+            <TextBlock Margin="10" Text="Custom TimeSpanPicker"/>
+        <telerik:RadTimeSpanPicker>
+            <telerik:RadTimeSpanPicker.TimeSpanComponents>
+                <telerik:DayTimeSpanComponent/>
+                <telerik:HourTimeSpanComponent/>
+                <telerik:MinuteTimeSpanComponent/>
+                <telerik:SecondTimeSpanComponent/>
+                <telerik:MillisecondTimeSpanComponent/>
+            </telerik:RadTimeSpanPicker.TimeSpanComponents>
+        </telerik:RadTimeSpanPicker>
+        <TextBlock Margin="10" Text="Custom TimeSpanPicker with additional properties"/>
+        <telerik:RadTimeSpanPicker>
+            <telerik:RadTimeSpanPicker.TimeSpanComponents>
+                <telerik:DayTimeSpanComponent Step="1.5" Maximum="22"/>
+                <telerik:HourTimeSpanComponent/>
+                <telerik:MinuteTimeSpanComponent Step="30"/>
+                <telerik:SecondTimeSpanComponent/>
+                <telerik:MillisecondTimeSpanComponent Minimum="100" Maximum="9000" Step="150"/>
+            </telerik:RadTimeSpanPicker.TimeSpanComponents>
+        </telerik:RadTimeSpanPicker>
+        <TextBlock Margin="10" Text="Default TimeSpanPicker with Events"/>
+        <telerik:RadTimeSpanPicker x:Name="tspControl1" GenerateDefaultComponents="True" ValueChanged="tspControl1_ValueChanged" DropDownOpened="tspControl1_DropDownOpened" 
+                                   DropDownClosed="tspControl1_DropDownClosed"/>
+        <TextBlock Margin="10" Text="Default TimeSpanPicker with RadDesktopAlert"/>
+        <telerik:RadTimeSpanPicker x:Name="tspControl2"  GenerateDefaultComponents="True" DropDownClosed="tspControl2_DropDownClosed" />
+    </StackPanel>
+</Window>
